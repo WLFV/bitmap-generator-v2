@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    @apply bg-white dark:bg-gray-900 text-black dark:text-white antialiased transition-colors duration-200;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+  
+  .mono {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+}
+
+@layer components {
+  /* WLFV Studio Button Style */
+  .wlfv-button {
+    @apply bg-black dark:bg-white text-white dark:text-black px-4 sm:px-6 lg:px-8 py-3 sm:py-4 font-bold uppercase tracking-wider
+           hover:bg-gray-900 dark:hover:bg-gray-100 transition-colors duration-150 
+           focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:ring-offset-2
+           disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed
+           text-sm sm:text-base lg:text-lg;
+  }
+  
+  .wlfv-button-outline {
+    @apply border-2 border-black dark:border-white bg-white dark:bg-gray-900 text-black dark:text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 font-bold uppercase tracking-wider
+           hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition-all duration-150 
+           focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:ring-offset-2
+           text-sm sm:text-base lg:text-lg;
+  }
+  
+  /* WLFV Studio Input Style */
+  .wlfv-input {
+    @apply border-2 border-black dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white px-3 sm:px-4 py-2 sm:py-3 font-medium
+           focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:ring-offset-2
+           placeholder:text-gray-400 dark:placeholder:text-gray-500 text-sm sm:text-base;
+  }
+  
+  /* WLFV Studio Card Style */
+  .wlfv-card {
+    @apply bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 p-4 sm:p-6 lg:p-8;
+  }
+  
+  /* WLFV Studio Slider */
+  .wlfv-slider {
+    @apply w-full h-1 bg-gray-200 dark:bg-gray-700 appearance-none cursor-pointer;
+  }
+  
+  .wlfv-slider::-webkit-slider-thumb {
+    @apply appearance-none w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 bg-black dark:bg-white cursor-pointer;
+  }
+  
+  .wlfv-slider::-moz-range-thumb {
+    @apply w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 bg-black dark:bg-white cursor-pointer border-0;
+  }
+  
+  /* Typography Utilities */
+  .wlfv-heading {
+    @apply font-bold uppercase tracking-tight;
+  }
+  
+  .wlfv-label {
+    @apply font-medium uppercase tracking-wide text-xs sm:text-sm;
+  }
+  
+  .wlfv-body {
+    @apply font-normal leading-relaxed text-sm sm:text-base;
+  }
+  
+  /* Layout Utilities */
+  .wlfv-grid {
+    @apply grid gap-6 sm:gap-8 lg:gap-12;
+  }
+  
+  .wlfv-section {
+    @apply py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Hover Effects */
+  .wlfv-hover-underline {
+    @apply relative;
+  }
+  
+  .wlfv-hover-underline::after {
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-black dark:bg-white transition-all duration-200;
+    content: '';
+  }
+  
+  .wlfv-hover-underline:hover::after {
+    @apply w-full;
+  }
+}
